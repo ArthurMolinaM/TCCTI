@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Loja de Tênis</title>
+  <title>Lace UP</title>
 
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -11,16 +11,19 @@
   <!-- CSS externo -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-gradient-to-r from-[#000000] to-[#000000] text-white font-sans">
+<body class=" text-white font-sans">
 
   <!-- Navbar -->
-  <header class="flex justify-between items-center px-10 py-6">
+  <header class="flex justify-between items-center px-10 py-6 absolute w-full">
     <nav class="space-x-6 text-sm">
       <a href="#" class="hover:text-gray-200">Home</a>
       <a href="#produtos" class="hover:text-gray-200">Produtos</a>
       <a href="#lançamentos" class="hover:text-gray-200">Lançamentos</a>
        <a href="#sobre" class="hover:text-gray-200">Sobre nós</a>
+       
     </nav>
+
+    
 
     <div class="flex items-center space-x-4">
       <button class="hover:text-gray-200">🛒</button>
@@ -29,22 +32,24 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-16">
+  <section class="flex flex-col md:flex-row items-center justify-between px-10 md:px-20 py-16 bg-[url('./images/background.jpg')] bg-cover bg-center bg-no-repeat min-h-dvh ">
+
 
     <!-- Texto -->
-    <div class="md:w-1/2 space-y-6">
-      <h1 class="text-5xl font-light leading-tight">
-        Seu estilo<br>
-        seus tênis<br>
-        <span class="font-semibold">sua vez de brilhar.</span>
-      </h1>
+    <div class="w-full space-y-6 flex flex-col items-center justify-center min-h-[90dvh] ">
+      <h1 class="text-5xl font-light my-0 py-0">Seu estilo</h1>
+      <h1 class="text-5xl font-light my-0 py-0">seus tênis</h1>
+      <h1 class="text-5xl font-ligh  my-0 py-0">sua vez de brilhar.</h1>
       <p class="text-sm text-gray-200 max-w-md">
         Descubra os tênis que definem seu estilo: dos clássicos aos lançamentos mais exclusivos, tudo para você se destacar.
       </p>
-      <button class="mt-4 px-6 py-3 bg-white text-[#b1493b] font-semibold rounded-full hover:bg-gray-200 transition">
+      <button class="mt-4 px-6 py-3 bg-white text-red-800 font-semibold rounded-full hover:bg-gray-200 transition">
         Ver Coleção
       </button>
+      
     </div>
+
+    
 
     <div class="md:w-1/2 mt-10 md:mt-0 flex justify-center ">
     </div>
@@ -135,7 +140,7 @@
   <h2 class="text-2xl font-bold mb-6">Confira os lançamentos abaixo</h2>
 
   <!-- Grid -->
-  <div id="sneakers-grid" class="grid md:grid-cols-3 gap-6">
+  <div id="sneakers-grid" class="grid md:grid-cols-3 gap-6 text-black">
     <!-- JS vai inserir os cards aqui -->
   </div>
 </section>
@@ -145,7 +150,7 @@
     {
       name: "Air Jordan 5 Retro",
       desc: "Fire Red Black Tongue 2025",
-      img: "https://static.nike.com/a/images/w_1280,q_auto,f_auto/4e6b2daa-2dc7-43c8-b8df-35bfc3723de6/air-jordan-5-fire-red-black-tongue-hq7978-101-release-date.jpg"
+      img: "https://droper-lapse.us-southeast-1.linodeobjects.com/20250730171221930-658.webp"
       
       
     },
@@ -157,12 +162,12 @@
     {
       name: "Humanrace x adidas Adizero Evo SL",
       desc: "White Green Blue",
-      img: "https://assets.adidas.com/images/w_600,f_auto,q_auto/adizero.png"
+      img: "https://droper-lapse.us-southeast-1.linodeobjects.com/20250910163824772-887.webp"
     },
     {
       name: "Air Jordan Spizike Low",
       desc: "Sail Wolf Grey Cement Grey Infrared 23",
-      img: "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/spizike-low.png"
+      img: "https://droper-lapse.us-southeast-1.linodeobjects.com/20250912141222848-609.webp"
     },
     {
       name: "Puma Sprint",
@@ -235,13 +240,13 @@
         <h3 class="text-lg font-semibold">Social</h3>
         <div class="flex gap-4 text-2xl">
           <a href="#" aria-label="WhatsApp">
-            <img src="./images/whatsapp.png" class="h-6 w-6" alt="WhatsApp">
+            <img src="./images/whatsapp-Photoroom.png" class="h-6 w-6" alt="WhatsApp">
           </a>
           <a href="#" aria-label="TikTok">
-            <img src="./images/tiktok.png" class="h-6 w-6" alt="TikTok">
+            <img src="./images/tiktok_logo_icon_186896.png" class="h-6 w-6" alt="TikTok">
           </a>
           <a href="#" aria-label="Instagram">
-            <img src="./images/instagram.png" class="h-6 w-6" alt="Instagram">
+            <img src="./images/instagram-Photoroom.png" class="h-6 w-6" alt="Instagram">
           </a>
         </div>
       </div>
@@ -266,7 +271,7 @@
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M16 12H8m8-4H8m8 8H8m12 0V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2z" />
         </svg>
-        <span>lojalaceup@gmail.com</span>
+        <span>LojaLaceup@gmail.com</span>
       </div>
       <div class="flex items-center gap-3">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
