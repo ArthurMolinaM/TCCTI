@@ -51,8 +51,6 @@
   </section>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 p-6 bg-gray-100" id="produtos">
 
-    
-
   <!-- card 1 -->
   <div class="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition">
     <img src="./images/airmax95.jpg" alt="Tênis" class="w-full h-56 object-cover">
@@ -61,9 +59,9 @@
       <p class="text-gray-500 text-sm mt-2">Conforto e estilo em um só modelo.</p>
       <div class="flex items-center justify-between mt-4">
         <span class="text-lg font-bold text-red-800">R$ 3.100,00</span>
-        <button class="px-4 py-2 bg-red-800 text-white text-sm rounded-lg hover:bg-[#8f382d] transition">
+        <a href="./index2.html" class="px-4 py-2 bg-red-800 text-white text-sm rounded-lg hover:bg-[#8f382d] transition">
           Comprar
-        </button>
+        </a> 
       </div>
     </div>
   </div>
@@ -147,12 +145,14 @@
     {
       name: "Air Jordan 5 Retro",
       desc: "Fire Red Black Tongue 2025",
-      img: "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/air-jordan-5.png"
+      img: "https://static.nike.com/a/images/w_1280,q_auto,f_auto/4e6b2daa-2dc7-43c8-b8df-35bfc3723de6/air-jordan-5-fire-red-black-tongue-hq7978-101-release-date.jpg"
+      
+      
     },
     {
       name: "Nike Shox R4",
       desc: "Bright Citron",
-      img: "https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/shox-r4.png"
+      img: "https://droper-lapse.us-southeast-1.linodeobjects.com/20250912135458300-608.webp"
     },
     {
       name: "Humanrace x adidas Adizero Evo SL",
@@ -209,9 +209,9 @@
 
  <!-- Seção Sobre Nós -->
 <section class="bg-black py-12 px-6 text-center" id="sobre">
-  <h2 class="text-3xl font-bold text-[#b1493b] mb-4">Sobre Nós</h2>
+  <h2 class="text-3xl font-bold text-red-800 mb-4">Sobre Nós</h2>
   <p class="text-white max-w-2xl mx-auto leading-relaxed">
-    A <span class="font-semibold text-[#b1493b]">Lace Up</span> é uma marca apaixonada por estilo, conforto e autenticidade.  
+    A <span class="font-semibold text-red-800">Lace Up</span> é uma marca apaixonada por estilo, conforto e autenticidade.  
     Nosso objetivo é oferecer calçados que acompanhem o seu ritmo, unindo design moderno e qualidade incomparável.  
     Mais do que uma loja, somos um movimento que acredita em caminhar com atitude.
   </p>
@@ -219,17 +219,54 @@
 
 <!-- Footer -->
 <footer class="bg-black text-white mt-12">
-  <div class="max-w-6xl mx-auto px-6 py-10 grid md:grid-cols-3 gap-8 border-t border-gray-800">
+  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col items-center gap-6 border-t border-gray-800">
+
+    <!-- Título e botão -->
+    <div class="flex flex-col md:flex-row items-center gap-4">
+      <h3 class="text-lg font-semibold">Está interessado?</h3>
+      <a href="./vendaagora.html" class="text-sm border border-white px-4 py-1 rounded hover:bg-white hover:text-black transition">Venda agora</a>
+    </div>
+
+    <!-- Social e Pagamento centralizados -->
+    <div class="flex flex-col md:flex-row items-center gap-10">
+
+      <!-- Social -->
+      <div class="flex flex-col items-center gap-2">
+        <h3 class="text-lg font-semibold">Social</h3>
+        <div class="flex gap-4 text-2xl">
+          <a href="#" aria-label="WhatsApp">
+            <img src="./images/whatsapp.png" class="h-6 w-6" alt="WhatsApp">
+          </a>
+          <a href="#" aria-label="TikTok">
+            <img src="./images/tiktok.png" class="h-6 w-6" alt="TikTok">
+          </a>
+          <a href="#" aria-label="Instagram">
+            <img src="./images/instagram.png" class="h-6 w-6" alt="Instagram">
+          </a>
+        </div>
+      </div>
+
+      <!-- Pagamento -->
+      <div class="flex flex-col items-center gap-2">
+        <h3 class="text-lg font-semibold">Formas de pagamento</h3>
+        <div class="flex gap-3">
+          <img src="./images/pix.png" alt="Pix" class="h-8">
+          <img src="./images/Mastercard-logo.png" alt="Mastercard" class="h-8">
+          <img src="./images/visa.png" alt="Visa" class="h-8">
+          <img src="./images/Elo_logo.png" alt="Elo" class="h-8">
+        </div>
+      </div>
+
+    </div>
 
     <!-- Contato -->
-    <div>
-      <h3 class="text-lg font-semibold mb-4">Está interessado?</h3>
-      <div class="flex items-center gap-3 mb-3">
+    <div class="flex flex-col items-center gap-2 mt-6">
+      <div class="flex items-center gap-3">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
             d="M16 12H8m8-4H8m8 8H8m12 0V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2z" />
         </svg>
-        <span>Laceup@gmail.com</span>
+        <span>lojalaceup@gmail.com</span>
       </div>
       <div class="flex items-center gap-3">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -240,33 +277,14 @@
       </div>
     </div>
 
-    <!-- Social -->
-    <div>
-      <h3 class="text-lg font-semibold mb-4">Social</h3>
-      <div class="flex gap-4 text-2xl">
-        <a href="#" aria-label="WhatsApp"></a>
-        <a href="#" aria-label="TikTok">🎵</a>
-        <a href="#" aria-label="Instagram">📸</a>
-      </div>
-    </div>
-
-    <!-- Pagamento -->
-    <div>
-      <h3 class="text-lg font-semibold mb-4 ">Formas de pagamento</h3>
-      <div class="flex gap-3">
-        <img src="./images/pix.png" alt="Pix" class="h-8">
-        <img src="./images/Mastercard-logo.png" alt="Mastercard" class="h-8">
-        <img src="./images/visa.png" alt="Visa" class="h-8">
-        <img src="./images/Elo_logo.png" alt="Elo" class="h-8">
-      </div>
-    </div>
   </div>
- 
+
   <!-- Direitos reservados -->
   <div class="text-center text-sm py-4 border-t border-gray-800">
     Todos os direitos reservados ©
   </div>
 </footer>
+
 
 
 <!-- dadaddadafac -->
