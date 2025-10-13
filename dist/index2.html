@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produto - Nike Air Max DN8</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen" id="telaproduto">
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white p-6 rounded-2xl shadow-lg max-w-5xl w-full">
+
+    <!-- Lado esquerdo: informações -->
+    <div class="flex flex-col justify-center p-4">
+      <h1 class="text-2xl font-semibold text-gray-800 mb-2">
+        Nike Air Max 95 Medium Ash Solar Red
+      </h1>
+
+      <div class="flex gap-3 my-4">
+        <button id="novoBtn" class="px-4 py-2 rounded-md bg-gray-200 text-gray-800 font-semibold">NOVOS</button>
+        <button id="usadoBtn" class="px-4 py-2 rounded-md bg-gray-200 text-gray-800 font-semibold">USADOS</button>
+      </div>
+
+      <p class="text-gray-600 text-sm mb-1">A partir de</p>
+      <h2 class="text-3xl font-bold text-gray-900 mb-6">R$ 3.100,00
+</h2>
+
+      <button class="bg-black text-white font-semibold py-3 px-6 rounded-full hover:bg-gray-800 transition">
+        Comprar
+      </button>
+    </div>
+
+    <!-- Lado direito: imagens -->
+    <div class="grid grid-cols-2 gap-4">
+      <img src="./images/airmax1.jpg" alt="Nike Air Max 1" class="rounded-lg object-cover w-full">
+      <img src="./images/airmax3.jpg" alt="Nike Air Max 2" class="rounded-lg object-cover w-full">
+      <img src="./images/airmaxdecima.jpg" alt="Nike Air Max 3" class="rounded-lg object-cover w-full">
+      <img src="./images/airmax4.jpg" alt="Nike Air Max 4" class="rounded-lg object-cover w-full">
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
