@@ -1,11 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro de Produto</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-    
+<body class="flex items-center justify-center min-h-screen bg-gray-50">
+
+  <div class="bg-white shadow-md rounded-2xl p-8 w-full max-w-3xl">
+    <h1 class="text-2xl font-semibold text-center mb-8">Cadastre seu Produto</h1>
+
+    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Coluna esquerda - Fotos -->
+      <div>
+        <label class="block text-gray-700 font-medium mb-2">Fotos</label>
+        <div class="grid grid-cols-2 gap-4">
+          <div class="col-span-2 relative border-2 border-gray-300 rounded-xl flex items-center justify-center h-40 cursor-pointer hover:border-gray-400">
+            <input type="file" class="absolute inset-0 opacity-0 cursor-pointer" onchange="previewImage(event, 'img1')">
+            <img id="img1" src="https://cdn-icons-png.flaticon.com/512/685/685655.png" class="w-10 opacity-40">
+          </div>
+
+          <div class="relative border-2 border-gray-300 rounded-xl flex items-center justify-center h-20 cursor-pointer hover:border-gray-400">
+            <input type="file" class="absolute inset-0 opacity-0 cursor-pointer" onchange="previewImage(event, 'img2')">
+            <img id="img2" src="https://cdn-icons-png.flaticon.com/512/685/685655.png" class="w-8 opacity-40">
+          </div>
+
+          <div class="relative border-2 border-gray-300 rounded-xl flex items-center justify-center h-20 cursor-pointer hover:border-gray-400">
+            <input type="file" class="absolute inset-0 opacity-0 cursor-pointer" onchange="previewImage(event, 'img3')">
+            <img id="img3" src="https://cdn-icons-png.flaticon.com/512/685/685655.png" class="w-8 opacity-40">
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna direita - Campos -->
+      <div class="flex flex-col space-y-4">
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">Nome do produto</label>
+          <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">Descrição do produto</label>
+          <textarea rows="3" class="w-full border border-gray-300 rounded-lg px-3 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
+        </div>
+
+        <div>
+          <label class="block text-gray-700 font-medium mb-1">Marca</label>
+          <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+        </div>
+
+        <div class="flex items-end justify-between space-x-4">
+          <div class="flex-1">
+            <label class="block text-gray-700 font-medium mb-1">Preço</label>
+            <input type="number" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+          </div>
+
+          <button type="submit" class="bg-black text-white font-medium px-6 py-2 rounded-lg hover:bg-gray-800 transition">
+            Criar anúncio
+          </button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <!-- Script de pré-visualização -->
+  <script>
+    function previewImage(event, imgId) {
+      const reader = new FileReader();
+      reader.onload = function() {
+        document.getElementById(imgId).src = reader.result;
+        document.getElementById(imgId).classList.remove('opacity-40');
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    }
+  </script>
+
 </body>
 </html>
