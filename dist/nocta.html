@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produto - NOCTA x Nike Air Force 1 Low Pink Foam</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen relative">
+
+  <!-- Ícone de voltar -->
+  <a href="./index.html" 
+     class="absolute top-6 left-6 bg-white shadow-md p-2 rounded-full hover:bg-gray-200 transition">
+    <svg xmlns="http://www.w3.org/2000/svg" 
+         fill="none" 
+         viewBox="0 0 24 24" 
+         stroke-width="2" 
+         stroke="currentColor" 
+         class="w-6 h-6 text-gray-700">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+    </svg>
+  </a>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white p-8 rounded-2xl shadow-lg max-w-5xl w-full transition-all duration-300 hover:shadow-xl">
+
+    <!-- Lado esquerdo: informações -->
+    <div class="flex flex-col justify-center p-4">
+      <h1 class="text-2xl font-semibold text-gray-800 mb-2">
+        NOCTA x Nike Air Force 1 Low Pink Foam
+      </h1>
+
+      <div class="flex gap-3 my-4">
+        <button id="novoBtn" class="px-4 py-2 rounded-md bg-gray-200 text-gray-800 font-semibold transition hover:bg-gray-300">NOVOS</button>
+        <button id="usadoBtn" class="px-4 py-2 rounded-md bg-gray-200 text-gray-800 font-semibold transition hover:bg-gray-300">USADOS</button>
+      </div>
+
+      <p class="text-gray-600 text-sm mb-1">A partir de</p>
+      <h2 id="preco" class="text-3xl font-bold text-gray-900 mb-6">R$ 1.980,00</h2>
+
+      <button id="comprarBtn" class="bg-black text-white font-semibold py-3 px-6 rounded-full hover:bg-gray-800 transition transform hover:scale-105">
+        Comprar no aplicativo
+      </button>
+
+      <!-- Informações adicionais -->
+      <div id="infoProduto" class="mt-8 border-t border-gray-200 pt-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Informações do Produto</h3>
+        <p class="text-gray-600 text-sm mb-4">
+          O <span class="font-semibold">Nike Air Max 95</span> combina conforto e estilo retrô com a tecnologia Air em toda a sola.
+          Este modelo na cor <span class="text-red-500 font-semibold">Solar Red</span> traz um visual moderno com tons de cinza e detalhes vibrantes.
+        </p>
+
+        <div class="flex flex-wrap gap-4 text-sm">
+          <div class="bg-gray-100 rounded-lg p-3 flex flex-col items-center w-28">
+            <span class="font-semibold text-gray-800">Tamanhos</span>
+            <span class="text-gray-600">39-44</span>
+          </div>
+
+          <div class="bg-gray-100 rounded-lg p-3 flex flex-col items-center w-28">
+            <span class="font-semibold text-gray-800">Disponíveis</span>
+            <span id="quantidade" class="text-gray-600">12 pares</span>
+          </div>
+
+          <div class="bg-gray-100 rounded-lg p-3 flex flex-col items-center w-28">
+            <span class="font-semibold text-gray-800">Marca</span>
+            <span class="text-gray-600">Nike</span>
+          </div>
+        </div>
+
+        <!-- Campo de quantidade -->
+        <div class="mt-6 flex items-center gap-3">
+          <label for="quantInput" class="text-sm text-gray-700 font-medium">Quantidade:</label>
+          <input type="number" id="quantInput" value="1" min="1" max="12" class="w-20 border border-gray-300 rounded-lg px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400 text-center">
+        </div>
+
+        <!-- Descrição expandida -->
+        <button id="verMaisBtn" class="mt-6 text-blue-600 hover:text-blue-800 font-medium transition">Ver mais detalhes</button>
+        <div id="descricaoCompleta" class="hidden mt-4 text-sm text-gray-600 leading-relaxed">
+          O Air Max 95 foi inspirado na anatomia humana — as camadas laterais representam músculos, a entressola é a espinha dorsal e os cadarços são as costelas.
+          Possui amortecimento Air em toda a extensão, solado de borracha durável e cabedal em mesh respirável com sobreposições de camurça.
+        </div>
+      </div>
+    </div>
+
+    <!-- Lado direito: imagens -->
+    <div class="grid grid-cols-2 gap-4">
+      <img src="./images/noctaesquerd (1).png" alt="Nike Air Max 1" class="rounded-lg object-cover w-full hover:scale-105 transition-transform duration-300">
+      <img src="./images/noctacima.png" alt="Nike Air Max 2" class="rounded-lg object-cover w-full hover:scale-105 transition-transform duration-300">
+      <img src="./images/noctatras.png" alt="Nike Air Max 3" class="rounded-lg object-cover w-full hover:scale-105 transition-transform duration-300">
+      <img src="./images/pardenoctas.png" alt="Nike Air Max 4" class="rounded-lg object-cover w-full hover:scale-105 transition-transform duration-300">
+    </div>
+
+  </div>
+
+  <script>
+    // Alternar entre "Novos" e "Usados"
+    const novoBtn = document.getElementById('novoBtn');
+    const usadoBtn = document.getElementById('usadoBtn');
+    const preco = document.getElementById('preco');
+    const quantidade = document.getElementById('quantidade');
+
+    novoBtn.addEventListener('click', () => {
+      preco.textContent = "R$ 3.100,00";
+      quantidade.textContent = "12 pares";
+      novoBtn.classList.add("bg-black", "text-white");
+      usadoBtn.classList.remove("bg-black", "text-white");
+    });
+
+    usadoBtn.addEventListener('click', () => {
+      preco.textContent = "R$ 2.350,00";
+      quantidade.textContent = "5 pares";
+      usadoBtn.classList.add("bg-black", "text-white");
+      novoBtn.classList.remove("bg-black", "text-white");
+    });
+
+    // Mostrar mais detalhes
+    const verMaisBtn = document.getElementById('verMaisBtn');
+    const descricao = document.getElementById('descricaoCompleta');
+    let aberto = false;
+
+    verMaisBtn.addEventListener('click', () => {
+      aberto = !aberto;
+      descricao.classList.toggle('hidden', !aberto);
+      verMaisBtn.textContent = aberto ? "Ver menos detalhes" : "Ver mais detalhes";
+    });
+
+    // Botão Comprar
+    const comprarBtn = document.getElementById('comprarBtn');
+    comprarBtn.addEventListener('click', () => {
+      const quant = document.getElementById('quantInput').value;
+      alert(`✅ Você adicionou ${quant} par(es) ao carrinho!`);
+    });
+  </script>
+</body>
+</html>
