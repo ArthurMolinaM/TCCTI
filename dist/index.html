@@ -20,13 +20,12 @@
   </style>
 </head>
   <!-- Navbar -->
-  <header class="flex justify-between items-center px-10 py-6 absolute w-full">
-    <nav class="space-x-6 text-sm">
-      <a href="#" class="hover:text-gray-200">Home</a>
-      <a href="#produtos" class="hover:text-gray-200">Produtos</a>
-      <a href="#lançamentos" class="hover:text-gray-200">Lançamentos</a>
-       <a href="#sobre" class="hover:text-gray-200">Sobre nós</a>
-       
+  <header class="flex justify-between items-center px-10 py-6 fixed w-full top-0 bg-black text-white z-50">
+  <nav class="space-x-6 text-sm">
+    <a href="#" class="hover:text-gray-200">Home</a>
+    <a href="#produtos" class="hover:text-gray-200">Produtos</a>
+    <a href="#lançamentos" class="hover:text-gray-200">Lançamentos</a>
+    <a href="#sobre" class="hover:text-gray-200">Sobre nós</a>
     </nav>
 
     
@@ -43,18 +42,18 @@
 
 
     <!-- Texto -->
-    <div class="w-full space-y-6 flex flex-col items-center justify-center min-h-[90dvh] ">
-      <h1 class="text-5xl font-light my-0 py-0">Seu estilo</h1>
-      <h1 class="text-5xl font-light my-0 py-0">seus tênis</h1>
-      <h1 class="text-5xl font-ligh  my-0 py-0">sua vez de brilhar.</h1>
-      <p class="text-sm text-gray-200 max-w-md">
-        Descubra os tênis que definem seu estilo: dos clássicos aos lançamentos mais exclusivos, tudo para você se destacar.
-      </p>
-      <a href="coleção.html" class="mt-4 px-6 py-3 bg-white text-red-800 font-semibold rounded-full hover:bg-gray-200 transition">
-        Ver Coleção
-    </a>
-      
-    </div>
+    <div class="w-full space-y-6 flex flex-col items-start justify-center min-h-[90dvh]">
+  <h1 class="text-5xl font-light my-0 py-0">Seu estilo</h1>
+  <h1 class="text-5xl font-light my-0 py-0">seus tênis</h1>
+  <h1 class="text-5xl font-light my-0 py-0">sua vez de brilhar.</h1>
+  <p class="text-sm text-gray-200 max-w-md">
+    Descubra os tênis que definem seu estilo: dos clássicos aos lançamentos mais exclusivos, tudo para você se destacar.
+  </p>
+  <a href="coleção.html" class="mt-4 px-6 py-3 bg-white text-red-800 font-semibold rounded-full hover:bg-gray-200 transition">
+    Ver Coleção
+  </a>
+</div>
+
 
     
 
@@ -143,13 +142,12 @@
 
 
 <!-- Seção Lançamentos -->
-<section class="max-w-6xl mx-auto p-6 bg-" id="lançamentos">
+<!-- Seção Lançamentos -->
+<section class="max-w-6xl mx-auto p-6" id="lançamentos">
   <h2 class="text-2xl font-bold mb-6">Confira os lançamentos abaixo</h2>
 
   <!-- Grid -->
-  <div id="sneakers-grid" class="grid md:grid-cols-3 gap-6 text-black">
-
-  </div>
+  <div id="sneakers-grid" class="grid md:grid-cols-3 gap-6 text-black"></div>
 </section>
 
 <script>
@@ -157,57 +155,67 @@
     {
       name: "Air Jordan 5 Retro",
       desc: "Fire Red Black Tongue 2025",
-      img: "./images/airjordan5.png"
-      
-      
+      img: "./images/airjordan5.png",
+      link: "./airjordan5.html"
     },
     {
       name: "Nike Shox Z",
       desc: "Metallic Silver",
-      img: "./images/nikeshoxZ.png"
+      img: "./images/nikeshoxZ.png",
+      link: "produto-nikeshoxz.html"
     },
     {
       name: "Humanrace x adidas Adizero Evo SL",
       desc: "White Green Blue",
-      img: "./images/humanrace.png"
+      img: "./images/humanrace.png",
+      link: "produto-humanrace.html"
     },
     {
       name: "Air Jordan Spizike Low",
       desc: "Sail Wolf Grey Cement Grey Infrared 23",
-      img: "./images/spikizelow.png"
+      img: "./images/spikizelow.png",
+      link: "produto-spizikelow.html"
     },
     {
       name: "Puma Sprint",
       desc: "Metallic Silver",
-      img: "./images/pumasprint.png"
+      img: "./images/pumasprint.png",
+      link: "produto-pumasprint.html"
     },
     {
       name: "Nike Air Max 95",
       desc: "Safety Orange Camo",
-      img: "./images/airmaxSafety.png"
+      img: "./images/airmaxSafety.png",
+      link: "produto-airmax95.html"
     },
     {
       name: "Adidas Handball Spezial",
       desc: "Lucid Blue Lime Burst Lucid Pink",
-      img: "./images/adidasHandball.png"
+      img: "./images/adidasHandball.png",
+      link: "produto-handball.html"
     },
     {
       name: "Yu-Gi-Oh! x Nike Air Max",
       desc: "Muscle 95 Joey",
-      img: "./images/yu-gi-oh.png"
+      img: "./images/yu-gi-oh.png",
+      link: "produto-yugioh.html"
     },
     {
       name: "Nike Vomero 18 SE",
       desc: "Multi-Colour Vivid Sulphur Dark Sulphur Clear",
-      img: "./images/nikevomero.png"
+      img: "./images/nikevomero.png",
+      link: "produto-vomero.html"
     }
   ];
 
   const grid = document.getElementById("sneakers-grid");
 
   sneakers.forEach(sneaker => {
-    const card = document.createElement("div");
-    card.className = "bg-white rounded-2xl shadow-md p-4 flex flex-col items-center text-center hover:shadow-lg transition";
+    const card = document.createElement("button");
+    card.className = `
+      bg-white rounded-2xl shadow-md p-4 flex flex-col items-center text-center 
+      hover:shadow-lg hover:scale-105 transition cursor-pointer focus:outline-none
+    `;
 
     card.innerHTML = `
       <img src="${sneaker.img}" alt="${sneaker.name}" class="h-36 object-contain mb-4">
@@ -215,9 +223,15 @@
       <p class="text-sm text-gray-500">${sneaker.desc}</p>
     `;
 
-    grid.appendChild(card); });
-    
+    // 🔹 Redireciona ao clicar
+    card.addEventListener("click", () => {
+      window.location.href = sneaker.link;
+    });
+
+    grid.appendChild(card);
+  });
 </script>
+
 
  <!-- Seção Sobre Nós -->
 <section class="bg-black py-12 px-6 text-center" id="sobre">
@@ -232,48 +246,47 @@
 
 <!-- Footer -->
 <footer class="bg-black text-white mt-12">
-  <div class="max-w-6xl mx-auto px-6 py-10 flex flex-col items-center gap-6 border-t border-gray-800">
+  <div class="max-w-6xl mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-gray-800">
 
-    <!-- Título e botão -->
-    <div class="flex flex-col md:flex-row items-center gap-4">
+    <!-- Coluna 1: Está interessado -->
+    <div class="flex flex-col items-start gap-2">
       <h3 class="text-lg font-semibold">Está interessado?</h3>
-      <a href="./vendaagora.html" class="text-sm border border-white px-4 py-1 rounded hover:bg-white hover:text-black transition">Venda agora</a>
+      <a href="./vendaagora.html" class="text-sm border border-white px-4 py-1 rounded hover:bg-white hover:text-black transition">
+        Venda agora
+      </a>
     </div>
 
-    <!-- Social e Pagamento centralizados -->
-    <div class="flex flex-col md:flex-row items-center gap-10">
-
-      <!-- Social -->
-      <div class="flex flex-col items-center gap-2">
-        <h3 class="text-lg font-semibold">Social</h3>
-        <div class="flex gap-4 text-2xl">
-          <a href="#" aria-label="WhatsApp">
-            <img src="./images/whatsapp-Photoroom.png" class="h-6 w-6" alt="WhatsApp">
-          </a>
-          <a href="#" aria-label="TikTok">
-            <img src="./images/tiktok_logo_icon_186896.png" class="h-6 w-6" alt="TikTok">
-          </a>
-          <a href="#" aria-label="Instagram">
-            <img src="./images/instagram-Photoroom.png" class="h-6 w-6" alt="Instagram">
-          </a>
-        </div>
+    <!-- Coluna 2: Social -->
+    <div class="flex flex-col items-start gap-2">
+      <h3 class="text-lg font-semibold">Social</h3>
+      <div class="flex gap-3 text-2xl">
+        <a href="#" aria-label="WhatsApp">
+          <img src="./images/whatsapp-Photoroom.png" class="h-6 w-6" alt="WhatsApp">
+        </a>
+        <a href="#" aria-label="TikTok">
+          <img src="./images/tiktok_logo_icon_186896.png" class="h-6 w-6" alt="TikTok">
+        </a>
+        <a href="#" aria-label="Instagram">
+          <img src="./images/instagram-Photoroom.png" class="h-6 w-6" alt="Instagram">
+        </a>
       </div>
-
-      <!-- Pagamento -->
-      <div class="flex flex-col items-center gap-2">
-        <h3 class="text-lg font-semibold">Formas de pagamento</h3>
-        <div class="flex gap-3">
-          <img src="./images/pix.png" alt="Pix" class="h-8">
-          <img src="./images/Mastercard-logo.png" alt="Mastercard" class="h-8">
-          <img src="./images/visa.png" alt="Visa" class="h-8">
-          <img src="./images/Elo_logo.png" alt="Elo" class="h-8">
-        </div>
-      </div>
-
     </div>
 
-    
+    <!-- Coluna 3: Pagamentos -->
+    <div class="flex flex-col items-start gap-2">
+      <h3 class="text-lg font-semibold">Formas de pagamento</h3>
+      <div class="flex gap-2">
+        <img src="./images/pix.png" alt="Pix" class="h-7">
+        <img src="./images/Mastercard-logo.png" alt="Mastercard" class="h-7">
+        <img src="./images/visa.png" alt="Visa" class="h-7">
+        <img src="./images/Elo_logo.png" alt="Elo" class="h-7">
+      </div>
+    </div>
+
+  </div>
 </footer>
+
+
 </section>
 
 
