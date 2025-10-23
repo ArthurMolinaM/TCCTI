@@ -1,163 +1,163 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Carrinho</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho - LaceUp</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <header class="bg-white shadow-md sticky top-0 z-20">
-    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-      <h1 class="text-xl font-semibold">Meu Carrinho</h1>
-    </div>
-  </header>
+<body class="bg-gray-50 text-gray-900 font-sans">
 
-  <main class="max-w-6xl mx-auto px-4 py-8">
-    <table class="w-full bg-white rounded-lg shadow-sm overflow-hidden">
-      <thead class="border-b bg-gray-100 text-gray-700 text-sm">
-        <tr>
-          <th class="text-left py-3 px-4 w-1/3">Produtos</th>
-          <th class="text-center py-3 px-4">Preço Unitário</th>
-          <th class="text-center py-3 px-4">Quantidade</th>
-          <th class="text-center py-3 px-4">Preço Total</th>
-          <th class="text-center py-3 px-4">Ações</th>
-        </tr>
-      </thead>
-      <tbody id="cart-table" class="text-sm">
-        <!-- Produtos serão inseridos via JS -->
-      </tbody>
-    </table>
+  <main class="max-w-6xl mx-auto py-12 px-4 md:flex gap-10">
+   
+    <!-- Ícone de voltar -->
+      <a href="./index.html" 
+         class="absolute top-6 left-6 bg-white shadow-md p-2 rounded-full hover:bg-gray-200 transition">
+        <svg xmlns="http://www.w3.org/2000/svg" 
+             fill="none" 
+             viewBox="0 0 24 24" 
+             stroke-width="2" 
+             stroke="currentColor" 
+             class="w-6 h-6 text-gray-700">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+        </svg>
+      </a>
 
-    <div class="flex justify-end mt-6">
-      <div class="bg-white p-4 rounded-lg shadow-sm w-full md:w-1/3">
-        <div class="flex justify-between mb-3 text-gray-700">
-          <span>Subtotal</span>
-          <span id="subtotal">R$ 0,00</span>
+   
+   
+    <!-- Itens do carrinho -->
+    <section id="carrinho" class="flex-1 relative">
+      <h1 class="text-3xl font-bold mb-4">SEU CARRINHO</h1>
+      <p class="mb-6 text-sm text-gray-700">
+        TOTAL (<span id="qtd">2 produtos</span>) 
+        <span class="font-semibold text-lg" id="valorTotal">R$4.900,00</span>
+      </p>
+
+     
+      <!-- Produtos -->
+      <div id="produtos" class="space-y-6">
+        <!-- Produto 1 -->
+        <div class="bg-white p-5 border rounded-lg flex flex-col md:flex-row gap-6 items-center produto">
+          <img src="./images/airmax95.jpg" 
+               alt="Tênis 1" class="w-28 h-28 object-cover rounded-md">
+          
+          <div class="flex-1">
+            <div class="flex justify-between items-start">
+              <h2 class="font-semibold text-lg">Nike Air Max 95 Medium Ash Solar Red</h2>
+              <button class="remover text-gray-500 hover:text-red-600 text-xl">✕</button>
+            </div>
+            <p class="text-sm text-gray-500">Cor: Vermelho / Cinza</p>
+            <p class="text-sm text-gray-500 mb-2">Tamanho: 42</p>
+            <p class="font-bold mb-2 preco">R$3.100,00</p>
+
+            <label class="text-sm text-gray-500">Quantidade:</label>
+            <select class="qtd border rounded-md p-1 text-sm">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
         </div>
-        <button id="checkout" class="w-full py-3 rounded-md bg-orange-500 text-white font-semibold hover:bg-orange-600">Finalizar Compra</button>
+
+        <!-- Produto 2 -->
+        <div class="bg-white p-5 border rounded-lg flex flex-col md:flex-row gap-6 items-center produto">
+          <img src="./images/noctaesquerd (1).png" 
+               alt="Tênis 2" class="w-28 h-28 object-cover rounded-md">
+          
+          <div class="flex-1">
+            <div class="flex justify-between items-start">
+              <h2 class="font-semibold text-lg">NOCTA x Nike Air Force 1 Low Pink Foam</h2>
+              <button class="remover text-gray-500 hover:text-red-600 text-xl">✕</button>
+            </div>
+            <p class="text-sm text-gray-500">Cor: Rosa</p>
+            <p class="text-sm text-gray-500 mb-2">Tamanho: 41</p>
+            <p class="font-bold mb-2 preco">R$1.800,00</p>
+
+            <label class="text-sm text-gray-500">Quantidade:</label>
+            <select class="qtd border rounded-md p-1 text-sm">
+              <option value="1" selected>1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Resumo -->
+    <aside class="w-full md:w-80 mt-10 md:mt-0">
+      <h2 class="text-xl font-bold mb-4">RESUMO DO PEDIDO</h2>
+
+      <div id="resumo" class="space-y-2 text-sm">
+        <div class="flex justify-between">
+          <span id="produtosResumo">2 produtos</span>
+          <span id="subtotalResumo">R$4.900,00</span>
+        </div>
+      </div>
+
+      <div class="border-t border-gray-300 pt-3 flex justify-between font-semibold text-lg mt-4">
+        <span>Total</span>
+        <span id="totalResumo">R$4.900,00</span>
+      </div>
+
+      <button class="mt-6 w-full bg-black text-white py-3 rounded-md font-semibold hover:bg-gray-800 transition">
+        FINALIZAR NO APP →
+      </button>
+
+      <div class="mt-6 text-sm text-gray-600">
+        <p class="font-semibold mb-2">Métodos de pagamento aceitos:</p>
+        <div class="flex gap-3">
+          <img src="./images/visa.png" class="h-6">
+          <img src="./images/Mastercard-logo.png" class="h-6">
+          <img src="./images/pix.png" class="h-6">
+          <img src="./images/Elo_logo.png" class="h-6">
+
+        </div>
+      </div>
+    </aside>
   </main>
 
+  <!-- JS -->
   <script>
-    const PRODUCTS = [
-      {
-        id: 'p1',
-        name: 'Tênis Masculino Casual Unissex Lançamento Confortável 34-43',
-        variation: 'Panda, 35',
-        price: 49.90,
-        oldPrice: 70.00,
-        img: 'https://via.placeholder.com/80'
-      }
-    ];
+    function atualizarTotais() {
+      const produtos = document.querySelectorAll('.produto');
+      let total = 0;
+      let qtdTotal = 0;
 
-    let cart = JSON.parse(localStorage.getItem('cart_v2') || '[]');
-
-    const fmt = v => v.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-
-    function renderCart() {
-      const table = document.getElementById('cart-table');
-      table.innerHTML = '';
-
-      if (cart.length === 0) {
-        table.innerHTML = '<tr><td colspan="5" class="text-center py-8 text-gray-500">Seu carrinho está vazio.</td></tr>';
-        document.getElementById('subtotal').textContent = fmt(0);
-        return;
-      }
-
-      let subtotal = 0;
-      cart.forEach(item => {
-        const total = item.price * item.qty;
-        subtotal += total;
-
-        const tr = document.createElement('tr');
-        tr.className = 'border-b hover:bg-gray-50';
-        tr.innerHTML = `
-          <td class="py-4 px-4">
-            <div class="flex items-center gap-3">
-              <input type="checkbox" class="mr-2">
-              <img src="${item.img}" alt="${item.name}" class="w-20 h-20 object-cover rounded">
-              <div>
-                <p class="font-semibold text-gray-800">${item.name}</p>
-                <p class="text-sm text-gray-500">Variações: ${item.variation}</p>
-                <p class="text-xs text-green-600 font-medium mt-1">FRETE GRÁTIS acima de R$10</p>
-              </div>
-            </div>
-          </td>
-          <td class="text-center text-gray-700">
-            <span class="line-through text-gray-400 mr-1">${fmt(item.oldPrice)}</span>
-            <span class="font-semibold">${fmt(item.price)}</span>
-          </td>
-          <td class="text-center">
-            <div class="flex justify-center items-center gap-2">
-              <button data-id="${item.id}" class="decrease px-2 py-1 bg-gray-100 rounded">-</button>
-              <input data-id="${item.id}" type="number" min="1" value="${item.qty}" class="w-14 text-center border rounded py-1">
-              <button data-id="${item.id}" class="increase px-2 py-1 bg-gray-100 rounded">+</button>
-            </div>
-          </td>
-          <td class="text-center font-semibold text-gray-800">${fmt(total)}</td>
-          <td class="text-center">
-            <button data-id="${item.id}" class="remove text-red-600 hover:underline text-sm">Excluir</button>
-          </td>
-        `;
-        table.appendChild(tr);
+      produtos.forEach(produto => {
+        const preco = parseFloat(produto.querySelector('.preco').textContent.replace('R$', '').replace('.', '').replace(',', '.'));
+        const qtd = parseInt(produto.querySelector('.qtd').value);
+        total += preco * qtd;
+        qtdTotal += qtd;
       });
 
-      document.getElementById('subtotal').textContent = fmt(subtotal);
-
-      // Eventos
-      document.querySelectorAll('.decrease').forEach(btn => {
-        btn.onclick = () => updateQty(btn.dataset.id, -1);
-      });
-      document.querySelectorAll('.increase').forEach(btn => {
-        btn.onclick = () => updateQty(btn.dataset.id, 1);
-      });
-      document.querySelectorAll('.remove').forEach(btn => {
-        btn.onclick = () => removeItem(btn.dataset.id);
-      });
-      document.querySelectorAll('input[type=number]').forEach(inp => {
-        inp.onchange = e => setQty(inp.dataset.id, parseInt(e.target.value));
-      });
+      document.getElementById('subtotalResumo').textContent = `R$${total.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+      document.getElementById('totalResumo').textContent = `R$${total.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+      document.getElementById('valorTotal').textContent = `R$${total.toLocaleString('pt-BR', {minimumFractionDigits: 2})}`;
+      document.getElementById('produtosResumo').textContent = `${qtdTotal} produto${qtdTotal > 1 ? 's' : ''}`;
+      document.getElementById('qtd').textContent = `${qtdTotal} produto${qtdTotal > 1 ? 's' : ''}`;
     }
 
-    function updateQty(id, change) {
-      const item = cart.find(i => i.id === id);
-      if (!item) return;
-      item.qty = Math.max(1, item.qty + change);
-      save();
-    }
-
-    function setQty(id, val) {
-      const item = cart.find(i => i.id === id);
-      if (!item) return;
-      item.qty = Math.max(1, val);
-      save();
-    }
-
-    function removeItem(id) {
-      cart = cart.filter(i => i.id !== id);
-      save();
-    }
-
-    function save() {
-      localStorage.setItem('cart_v2', JSON.stringify(cart));
-      renderCart();
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      if (cart.length === 0) {
-        cart = PRODUCTS.map(p => ({ ...p, qty: 1 }));
-        save();
-      } else renderCart();
-
-      document.getElementById('checkout').onclick = () => {
-        const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
-        alert(`Compra finalizada! Total: ${fmt(subtotal)}`);
-        cart = [];
-        save();
-      };
+    // Atualiza ao mudar quantidade
+    document.querySelectorAll('.qtd').forEach(select => {
+      select.addEventListener('change', atualizarTotais);
     });
+
+    // Remove produto
+    document.querySelectorAll('.remover').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.target.closest('.produto').remove();
+        if (document.querySelectorAll('.produto').length === 0) {
+          document.getElementById('carrinho').innerHTML = '<p class="text-gray-500 mt-6">Seu carrinho está vazio</p>';
+          document.querySelector('aside').remove();
+        } else {
+          atualizarTotais();
+        }
+      });
+    });
+
+    atualizarTotais();
   </script>
+
 </body>
 </html>
