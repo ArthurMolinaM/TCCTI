@@ -19,20 +19,54 @@
     }
   </style>
 </head>
-  <!-- Navbar -->
-  <header class="flex justify-between items-center px-10 py-6 fixed w-full top-0 bg-black text-white z-50">
-  <nav class="space-x-6 text-sm">
-    <a href="#" class="hover:text-gray-200">Home</a>
-    <a href="#produtos" class="hover:text-gray-200">Produtos</a>
-    <a href="#lançamentos" class="hover:text-gray-200">Lançamentos</a>
-    <a href="#sobre" class="hover:text-gray-200">Sobre nós</a>
-    </nav>
+ <!-- Navbar -->
+<header class="flex items-center justify-between px-10 py-6 fixed w-full top-0 bg-black text-white z-50">
 
+  <!-- Container esquerdo: logo + menu -->
+  <div class="flex items-center space-x-10">
+    <!-- Logo -->
+    <img src="images/Logo Minimalista _LaceUp_ em Preto e Branco.png" alt="Logo LaceUp" class="h-12">
+
+    <!-- Menu -->
+    <nav class="flex space-x-8 text-sm">
+      <a href="#" class="hover:text-gray-200">Home</a>
+      <a href="#produtos" class="hover:text-gray-200">Produtos</a>
+      <a href="#lançamentos" class="hover:text-gray-200">Lançamentos</a>
+      <a href="#sobre" class="hover:text-gray-200">Sobre nós</a>
+    </nav>
+  </div>
     
 
     <div class="flex items-center space-x-4">
       <a href="./carrinho.html" class="hover:text-gray-200">🛒</a>
-      <button class="hover:text-gray-200">🔍</button>
+      <!-- Botão e campo de pesquisa -->
+<div class="relative">
+  <!-- Botão de pesquisa -->
+  <button id="searchBtn" class="hover:text-gray-200 text-xl">
+    🔍
+  </button>
+
+  <!-- Campo de pesquisa (escondido no início) -->
+  <input
+    id="searchInput"
+    type="text"
+    placeholder="Pesquisar..."
+    class="hidden absolute right-0 top-8 bg-gray-800 text-white border border-gray-600 rounded-lg px-3 py-2 w-48 focus:outline-none focus:ring-2 focus:ring-gray-400"
+  />
+</div>
+
+<script>
+  // Pega os elementos
+  const searchBtn = document.getElementById('searchBtn');
+  const searchInput = document.getElementById('searchInput');
+
+  // Ao clicar no botão, mostra/esconde o campo de pesquisa
+  searchBtn.addEventListener('click', () => {
+    searchInput.classList.toggle('hidden');
+    searchInput.focus();
+  });
+</script>
+
       <a href="./fazerlogin.html" class="hover:text-gray-200">👤</a>
     </div>
   </header>
