@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LaceUp - Produtos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+
+    
+
+ <!-- Header -->
+<header class="bg-black text-white px-8 py-5 flex justify-between items-center sticky top-0 z-50">
+  <!-- Logo -->
+  <a href="#">
+    <img src="images/Logo Minimalista _LaceUp_ em Preto e Branco.png" alt="LaceUp" class="h-10 w-auto">
+  </a>
+    <nav class="space-x-6">
+       <!-- Botão e campo de pesquisa -->
+<div class="relative">
+  <!-- Botão de pesquisa -->
+  <button id="searchBtn" class="hover:text-gray-200 text-xl">
+    🔍
+  </button>
+   <input
+    id="searchInput"
+    type="text"
+    placeholder="Pesquisar..."
+    class="hidden absolute right-0 top-8 bg-gray-800 text-white border border-gray-600 rounded-lg px-3 py-2 w-48 focus:outline-none focus:ring-2 focus:ring-gray-400"
+  />
+</div>
+
+<script>
+  // Pega os elementos
+  const searchBtn = document.getElementById('searchBtn');
+  const searchInput = document.getElementById('searchInput');
+
+  // Ao clicar no botão, mostra/esconde o campo de pesquisa
+  searchBtn.addEventListener('click', () => {
+    searchInput.classList.toggle('hidden');
+    searchInput.focus();
+  });
+  
+  
+</script>
+    </nav>
+  </header>
+ 
+  
+
+  <!-- Seção de Produtos -->
+  <section class="max-w-7xl mx-auto py-12 px-6">
+    <h2 class="text-3xl font-bold mb-10 text-center">Confira nossos produtos</h2>
+    
+
+    <!-- Grid de produtos -->
+    <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8"></div>
+  </section>
+
+  <!-- Script -->
+  <script>
+    const products = [
+      {
+        name: "Nike Air Max 95 Medium Ash Solar Red",
+        price: "R$ 3.100,00",
+        img: "https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/bbdfa3e8-d7b4-4982-904f-cdb87a91c76f/air-max-95-medium-ash-solar-red.jpg"
+      },
+      {
+        name: "Nike Air Max Dn8 Black Total Orange Fierce Purple",
+        price: "R$ 1.399,90",
+        img: "https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/03d58a49-f6c4-4a1c-83fd-1c80eb6de514/air-max-dn8.jpg"
+      },
+      {
+        name: "New Balance 991 Made In UK Grounded",
+        price: "R$ 1.800,00",
+        img: "https://nb.scene7.com/is/image/NB/m991gr_2_nb_02_i?$pdpflexf2$&wid=800&hei=800"
+      },
+      {
+        name: "adidas ADI2000 Core Black Wonder Beige Cardboard",
+        price: "R$ 699,90",
+        img: "https://assets.adidas.com/images/w_600,f_auto,q_auto/21d9e4c91db444d6a316af96011e7b32_9366/ADI2000_Sapatos_Preto_ID8718_01_standard.jpg"
+      },
+      {
+        name: "NOCTA x Nike Air Force 1 Low Pink Foam",
+        price: "R$ 1.980,00",
+        img: "https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/8a0a5bfc-9582-4b71-8c39-6c0a30c7134d/nocta-air-force-1-pink-foam.jpg"
+      },
+      {
+        name: "Chuteira Nike Beco 2 Society",
+        price: "R$ 218,49",
+        img: "https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/8f070ec0-3c1d-44d8-aad8-3276ac621e69/chuteira-nike-beco-2-society.jpg"
+      },
+      {
+        name: "Nike Premier 3 Society",
+        price: "R$ 949,99",
+        img: "https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/5b89b12a-332b-47ee-8a1c-2bb05d2327b2/chuteira-premier-3.jpg"
+      },
+      {
+        name: "Chuteira Nike Beco 2 Futsal",
+        price: "R$ 218,49",
+        img: "https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/a2721ef4-2352-45f2-a843-efc67f39a5ff/chuteira-nike-beco-2-futsal.jpg"
+      },
+      {
+        name: "Air Jordan 1 Retro High OG Black White",
+        price: "R$ 1.599,00",
+        img: "https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/air-jordan-1-high-og.jpg"
+      },
+      {
+        name: "Nike Dunk Low Panda",
+        price: "R$ 799,99",
+        img: "https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/dunk-low-panda.jpg"
+      },
+      {
+        name: "adidas Forum Low Triple White",
+        price: "R$ 699,90",
+        img: "https://assets.adidas.com/images/w_600,f_auto,q_auto/forum-low-triple-white.jpg"
+      },
+      {
+        name: "Nike Zoom Vomero 5 Photon Dust",
+        price: "R$ 1.299,90",
+        img: "https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/vomero-5-photon-dust.jpg"
+      },
+      {
+        name: "Nike Air Force 1 '07 White",
+        price: "R$ 749,99",
+        img: "https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/air-force-1-07-white.jpg"
+      },
+      {
+        name: "adidas Samba OG Black White",
+        price: "R$ 699,90",
+        img: "https://assets.adidas.com/images/w_600,f_auto,q_auto/samba-og-black-white.jpg"
+      },
+      {
+        name: "Nike Air Max Plus Drift",
+        price: "R$ 1.499,99",
+        img: "https://static.nike.com/a/images/t_prod_ss/w_960,c_limit,f_auto/air-max-plus-drift.jpg"
+      }
+    ];
+
+    const grid = document.getElementById("product-grid");
+
+    products.forEach(prod => {
+      const card = document.createElement("div");
+      card.className = "bg-white rounded-2xl shadow-md overflow-hidden hover:shadow-xl transition duration-300 flex flex-col";
+
+      card.innerHTML = `
+        <img src="${prod.img}" alt="${prod.name}" class="w-full h-52 object-contain p-4 bg-gray-50">
+        <div class="p-5 flex-1 flex flex-col justify-between">
+          <div>
+            <h3 class="font-semibold text-lg mb-2">${prod.name}</h3>
+            <p class="text-red-700 font-bold text-lg mb-4">${prod.price}</p>
+          </div>
+          <button class="bg-red-700 text-white py-2 px-4 rounded-xl hover:bg-red-800 transition">Comprar</button>
+        </div>
+      `;
+
+      grid.appendChild(card);
+    });
+  </script>
+</body>
+</html>
