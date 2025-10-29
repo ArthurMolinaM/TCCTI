@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Produto - Humanrace x adidas Adizero</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+  <!-- Header -->
+  <header class="bg-black text-white px-8 py-5 flex justify-between items-center sticky top-0 z-50">
+    <!-- Logo -->
+    <a href="#">
+      <img src="images/Logo Minimalista _LaceUp_ em Preto e Branco.png" alt="LaceUp" class="h-10 w-auto">
+    </a>
+  </header>
+
+  <!-- Ícone de voltar -->
+  <div class="mt-6 px-6">
+    <a href="./index.html" 
+       class="bg-white shadow-md p-2 rounded-full hover:bg-gray-200 transition inline-block">
+      <svg xmlns="http://www.w3.org/2000/svg" 
+           fill="none" 
+           viewBox="0 0 24 24" 
+           stroke-width="2" 
+           stroke="currentColor" 
+           class="w-6 h-6 text-gray-700">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+    </a>
+  </div>
+
+ <main class="flex-grow flex items-center justify-center px-6 py-12">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 bg-white p-8 rounded-2xl shadow-lg max-w-5xl w-full">
+
+    <div class="flex flex-col justify-center p-4">
+      <h1 class="text-2xl font-semibold text-gray-800 mb-2">
+        Nike Vomero 18 SE – Multi-Colour Vivid Sulphur
+      </h1>
+
+      <p class="text-gray-600 text-sm mb-1">A partir de</p>
+      <h2 id="preco" class="text-3xl font-bold text-gray-900 mb-6">R$ 1.599,00</h2>
+
+      <button id="comprarBtn" class="bg-black text-white font-semibold py-3 px-6 rounded-full hover:bg-gray-800 transition transform hover:scale-105">
+        Comprar no aplicativo
+      </button>
+
+      <div id="infoProduto" class="mt-8 border-t border-gray-200 pt-6">
+        <h3 class="text-lg font-semibold text-gray-800 mb-2">Informações do Produto</h3>
+        <p class="text-gray-600 text-sm mb-4">
+          O <span class="text-pink-950 font-semibold">Nike Vomero 18 SE Multi-Colour Vivid Sulphur</span> oferece conforto máximo e cores vibrantes para performance e estilo.
+        </p>
+
+        <div class="flex flex-wrap gap-4 text-sm">
+          <div class="bg-gray-100 rounded-lg p-3 flex flex-col items-center w-28">
+            <span class="font-semibold text-gray-800">Tamanhos</span>
+            <span class="text-gray-600">36-44</span>
+          </div>
+          <div class="bg-gray-100 rounded-lg p-3 flex flex-col items-center w-28">
+            <span class="font-semibold text-gray-800">Disponíveis</span>
+            <span class="text-gray-600">18 pares</span>
+          </div>
+          <div class="bg-gray-100 rounded-lg p-3 flex flex-col items-center w-28">
+            <span class="font-semibold text-gray-800">Marca</span>
+            <span class="text-gray-600">Nike</span>
+          </div>
+        </div>
+
+        <div class="mt-6 flex items-center gap-3">
+          <label for="quantInput" class="text-sm text-gray-700 font-medium">Quantidade:</label>
+          <input type="number" id="quantInput" value="1" min="1" max="12" class="w-20 border border-gray-300 rounded-lg px-2 py-1 focus:outline-none focus:ring-2 focus:ring-blue-400 text-center">
+        </div>
+
+        <button id="verMaisBtn" class="mt-6 text-blue-600 hover:text-blue-800 font-medium transition">Ver mais detalhes</button>
+        <div id="descricaoCompleta" class="hidden mt-4 text-sm text-gray-600 leading-relaxed">
+          O Nike Vomero 18 SE oferece amortecimento premium, ajuste suave e materiais respiráveis. Perfeito para treinos e uso diário, com combinação de cores vivas que transmite energia e estilo moderno.
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-2 gap-4">
+      <img src="./images/vomero1.png" alt="Nike Vomero 18 SE" class="rounded-lg object-cover w-full hover:scale-105 transition-transform duration-300">
+      <img src="./images/vomero2.png" alt="Vomero lateral" class="rounded-lg object-cover w-full hover:scale-105 transition-transform duration-300">
+      <img src="./images/vomero3.png" alt="Vomero detalhe" class="rounded-lg object-cover w-full hover:scale-105 transition-transform duration-300">
+      <img src="./images/vomero4.png" alt="Vomero sola" class="rounded-lg object-cover w-full hover:scale-105 transition-transform duration-300">
+    </div>
+
+  </div>
+</main>
+
+
+  <footer class="bg-black text-white mt-12">
+    <div class="max-w-6xl mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-gray-800">
+      <div class="flex flex-col items-start gap-2">
+        <h3 class="text-lg font-semibold">Está interessado?</h3>
+        <a href="./vendaagora.html" class="text-sm border border-white px-4 py-1 rounded hover:bg-white hover:text-black transition">
+          Venda agora
+        </a>
+      </div>
+
+      <div class="flex flex-col items-start gap-2">
+        <h3 class="text-lg font-semibold">Social</h3>
+        <div class="flex gap-3 text-2xl">
+          <a href="#" aria-label="WhatsApp">
+            <img src="./images/whatsapp-Photoroom.png" class="h-6 w-6" alt="WhatsApp">
+          </a>
+          <a href="#" aria-label="TikTok">
+            <img src="./images/tiktok_logo_icon_186896.png" class="h-6 w-6" alt="TikTok">
+          </a>
+          <a href="#" aria-label="Instagram">
+            <img src="./images/instagram-Photoroom.png" class="h-6 w-6" alt="Instagram">
+          </a>
+        </div>
+      </div>
+
+      <div class="flex flex-col items-start gap-2">
+        <h3 class="text-lg font-semibold">Formas de pagamento</h3>
+        <div class="flex gap-2">
+          <img src="./images/pix.png" alt="Pix" class="h-7">
+          <img src="./images/Mastercard-logo.png" alt="Mastercard" class="h-7">
+          <img src="./images/visa.png" alt="Visa" class="h-7">
+          <img src="./images/Elo_logo.png" alt="Elo" class="h-7">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const novoBtn = document.getElementById('novoBtn');
+    const usadoBtn = document.getElementById('usadoBtn');
+    const preco = document.getElementById('preco');
+    const quantidade = document.getElementById('quantidade');
+
+    novoBtn.addEventListener('click', () => {
+      preco.textContent = "R$ 3.100,00";
+      quantidade.textContent = "12 pares";
+      novoBtn.classList.add("bg-black", "text-white");
+      usadoBtn.classList.remove("bg-black", "text-white");
+    });
+
+    usadoBtn.addEventListener('click', () => {
+      preco.textContent = "R$ 2.350,00";
+      quantidade.textContent = "5 pares";
+      usadoBtn.classList.add("bg-black", "text-white");
+      novoBtn.classList.remove("bg-black", "text-white");
+    });
+
+    const verMaisBtn = document.getElementById('verMaisBtn');
+    const descricao = document.getElementById('descricaoCompleta');
+    let aberto = false;
+
+    verMaisBtn.addEventListener('click', () => {
+      aberto = !aberto;
+      descricao.classList.toggle('hidden', !aberto);
+      verMaisBtn.textContent = aberto ? "Ver menos detalhes" : "Ver mais detalhes";
+    });
+  </script>
+</body>
+</html>
