@@ -7,78 +7,120 @@
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="flex items-center justify-center min-h-screen bg-gray-50">
+<body class="bg-gray-50 text-gray-900 font-sans flex flex-col min-h-screen">
 
-  <div class="bg-white shadow-md rounded-2xl p-8 w-full max-w-3xl">
-    <h1 class="text-2xl font-semibold text-center mb-8">Cadastre seu Produto</h1>
+  <!-- Header -->
+  <header class="bg-black text-white px-8 py-5 flex justify-between items-center sticky top-0 z-50">
+    <!-- Logo -->
+    <a href="#">
+      <img src="images/Logo Minimalista _LaceUp_ em Preto e Branco.png" alt="LaceUp" class="h-10 w-auto">
+    </a>
+  </header>
 
-    <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  <!-- Main -->
+  <main class="flex-grow flex items-center justify-center px-6 py-12">
+    <div class="bg-white shadow-md rounded-2xl p-8 w-full max-w-3xl relative">
+      <h1 class="text-2xl font-semibold text-center mb-8">Cadastre seu Produto</h1>
+
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
         <!-- Ícone de voltar -->
-  <a href="./index.html" 
-     class="absolute top-6 left-6 bg-white shadow-md p-2 rounded-full hover:bg-gray-200 transition">
-    <svg xmlns="http://www.w3.org/2000/svg" 
-         fill="none" 
-         viewBox="0 0 24 24" 
-         stroke-width="2" 
-         stroke="currentColor" 
-         class="w-6 h-6 text-gray-700">
-      <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-    </svg>
-  </a>
+        <a href="./index.html" 
+           class="absolute top-6 left-6 bg-white shadow-md p-2 rounded-full hover:bg-gray-200 transition">
+          <svg xmlns="http://www.w3.org/2000/svg" 
+               fill="none" 
+               viewBox="0 0 24 24" 
+               stroke-width="2" 
+               stroke="currentColor" 
+               class="w-6 h-6 text-gray-700">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        </a>
 
-      <!-- Coluna esquerda - Fotos -->
-      <div>
-        <label class="block text-gray-700 font-medium mb-2">Fotos</label>
-        <div class="grid grid-cols-2 gap-4">
-          <div class="col-span-2 relative border-2 border-gray-300 rounded-xl flex items-center justify-center h-40 cursor-pointer hover:border-gray-400">
-            <input type="file" class="absolute inset-0 opacity-0 cursor-pointer" onchange="previewImage(event, 'img1')">
-            <img id="img1" src="https://cdn-icons-png.flaticon.com/512/685/685655.png" class="w-10 opacity-40">
+        <!-- Coluna esquerda - Fotos -->
+        <div>
+          <label class="block text-gray-700 font-medium mb-2">Fotos</label>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="col-span-2 relative border-2 border-gray-300 rounded-xl flex items-center justify-center h-40 cursor-pointer hover:border-gray-400">
+              <input type="file" class="absolute inset-0 opacity-0 cursor-pointer" onchange="previewImage(event, 'img1')">
+              <img id="img1" src="https://cdn-icons-png.flaticon.com/512/685/685655.png" class="w-10 opacity-40">
+            </div>
+
+            <div class="relative border-2 border-gray-300 rounded-xl flex items-center justify-center h-20 cursor-pointer hover:border-gray-400">
+              <input type="file" class="absolute inset-0 opacity-0 cursor-pointer" onchange="previewImage(event, 'img2')">
+              <img id="img2" src="https://cdn-icons-png.flaticon.com/512/685/685655.png" class="w-8 opacity-40">
+            </div>
+
+            <div class="relative border-2 border-gray-300 rounded-xl flex items-center justify-center h-20 cursor-pointer hover:border-gray-400">
+              <input type="file" class="absolute inset-0 opacity-0 cursor-pointer" onchange="previewImage(event, 'img3')">
+              <img id="img3" src="https://cdn-icons-png.flaticon.com/512/685/685655.png" class="w-8 opacity-40">
+            </div>
+          </div>
+        </div>
+
+        <!-- Coluna direita - Campos -->
+        <div class="flex flex-col space-y-4">
+          <div>
+            <label class="block text-gray-700 font-medium mb-1">Nome do produto</label>
+            <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
           </div>
 
-          <div class="relative border-2 border-gray-300 rounded-xl flex items-center justify-center h-20 cursor-pointer hover:border-gray-400">
-            <input type="file" class="absolute inset-0 opacity-0 cursor-pointer" onchange="previewImage(event, 'img2')">
-            <img id="img2" src="https://cdn-icons-png.flaticon.com/512/685/685655.png" class="w-8 opacity-40">
+          <div>
+            <label class="block text-gray-700 font-medium mb-1">Descrição do produto</label>
+            <textarea rows="3" class="w-full border border-gray-300 rounded-lg px-3 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
           </div>
 
-          <div class="relative border-2 border-gray-300 rounded-xl flex items-center justify-center h-20 cursor-pointer hover:border-gray-400">
-            <input type="file" class="absolute inset-0 opacity-0 cursor-pointer" onchange="previewImage(event, 'img3')">
-            <img id="img3" src="https://cdn-icons-png.flaticon.com/512/685/685655.png" class="w-8 opacity-40">
+          <div>
+            <label class="block text-gray-700 font-medium mb-1">Marca</label>
+            <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
           </div>
+
+          <div class="flex items-end justify-between space-x-4">
+            <div class="flex-1">
+              <label class="block text-gray-700 font-medium mb-1">Preço</label>
+              <input type="number" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+
+            <button type="submit" class="bg-black text-white font-medium px-6 py-2 rounded-lg hover:bg-gray-800 transition">
+              Criar anúncio
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <!-- Footer (sem o "Está interessado?" e botão) -->
+  <footer class="bg-black text-white mt-12">
+    <div class="max-w-6xl mx-auto px-6 py-8 grid grid-cols-1 md:grid-cols-2 gap-4 border-t border-gray-800">
+      
+      <div class="flex flex-col items-start gap-2">
+        <h3 class="text-lg font-semibold">Social</h3>
+        <div class="flex gap-3 text-2xl">
+          <a href="#" aria-label="WhatsApp">
+            <img src="./images/whatsapp-Photoroom.png" class="h-6 w-6" alt="WhatsApp">
+          </a>
+          <a href="#" aria-label="TikTok">
+            <img src="./images/tiktok_logo_icon_186896.png" class="h-6 w-6" alt="TikTok">
+          </a>
+          <a href="#" aria-label="Instagram">
+            <img src="./images/instagram-Photoroom.png" class="h-6 w-6" alt="Instagram">
+          </a>
         </div>
       </div>
 
-      <!-- Coluna direita - Campos -->
-      <div class="flex flex-col space-y-4">
-        <div>
-          <label class="block text-gray-700 font-medium mb-1">Nome do produto</label>
-          <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-        </div>
-
-        <div>
-          <label class="block text-gray-700 font-medium mb-1">Descrição do produto</label>
-          <textarea rows="3" class="w-full border border-gray-300 rounded-lg px-3 py-2 resize-none focus:outline-none focus:ring-2 focus:ring-blue-500"></textarea>
-        </div>
-
-        <div>
-          <label class="block text-gray-700 font-medium mb-1">Marca</label>
-          <input type="text" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-        </div>
-
-        <div class="flex items-end justify-between space-x-4">
-          <div class="flex-1">
-            <label class="block text-gray-700 font-medium mb-1">Preço</label>
-            <input type="number" class="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
-          </div>
-
-          <button type="submit" class="bg-black text-white font-medium px-6 py-2 rounded-lg hover:bg-gray-800 transition">
-            Criar anúncio
-          </button>
+      <div class="flex flex-col items-start gap-2">
+        <h3 class="text-lg font-semibold">Formas de pagamento</h3>
+        <div class="flex gap-2">
+          <img src="./images/pix.png" alt="Pix" class="h-7">
+          <img src="./images/Mastercard-logo.png" alt="Mastercard" class="h-7">
+          <img src="./images/visa.png" alt="Visa" class="h-7">
+          <img src="./images/Elo_logo.png" alt="Elo" class="h-7">
         </div>
       </div>
 
-    </form>
-  </div>
+    </div>
+  </footer>
 
   <!-- Script de pré-visualização -->
   <script>
